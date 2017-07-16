@@ -9,9 +9,9 @@ namespace BankAccountProject
     abstract class Account
     {
 
-        public abstract void Deposit();
+        public abstract double Deposit(double deposit);
 
-        public abstract void Withdraw();
+        public abstract double Withdraw(double withdraw);
 
     }
 }

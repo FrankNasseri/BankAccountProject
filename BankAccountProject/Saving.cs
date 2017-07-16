@@ -11,17 +11,18 @@ namespace BankAccountProject
         private double balance = 10000d;
         public double AccountBalance
         {
-            get { return this.balance; }
+            get { return balance; }
+            set { this.AccountBalance = value; }
         }
 
-        public override void Deposit()
+        public override double Deposit(double deposit)
         {
-            throw new NotImplementedException();
+            AccountBalance += deposit;
         }
 
-        public override void Withdraw()
+        public override double Withdraw(double withdraw)
         {
-            throw new NotImplementedException();
+            AccountBalance -= withdraw;
         }
     }
 }
