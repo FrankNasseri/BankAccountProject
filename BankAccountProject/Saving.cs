@@ -17,12 +17,12 @@ namespace BankAccountProject
 
         public override double Deposit(double deposit)
         {
-            AccountBalance += deposit;
+            return AccountBalance += deposit;
         }
 
         public override double Withdraw(double withdraw)
         {
-            AccountBalance -= withdraw;
+            return AccountBalance -= withdraw;
         }
     }
 }

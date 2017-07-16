@@ -8,7 +8,7 @@ namespace BankAccountProject
 {
     class Checking : Account
     {
-        private double balance = 40000d;
+        private double balance = 0d;
         private string accountNumber;
 
         public double AccountBalance
@@ -20,7 +20,7 @@ namespace BankAccountProject
         public Checking()
         {
             this.accountNumber = "324";
-            this.balance = 40000;
+            this.balance = 400;
         }
 
         public void CheckBalance()
@@ -30,12 +30,12 @@ namespace BankAccountProject
 
         public override double Deposit(double deposit)
         {
-            AccountBalance += deposit;
+            return AccountBalance += deposit;
         }
 
         public override double Withdraw(double withdraw)
         {
-            AccountBalance -= withdraw; 
+            return AccountBalance -= withdraw; 
         }
 
     }

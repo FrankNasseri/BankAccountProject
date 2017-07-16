@@ -35,7 +35,7 @@ namespace BankAccountProject
             {
                 Console.WriteLine("1. Checking \n2. Saving");
                 int secondChoice = int.Parse(Console.ReadLine());
-                Console.Clear();
+                //Console.Clear();
                 if (secondChoice == 1)
                 {
                     Console.WriteLine(checking1.AccountBalance);
@@ -43,6 +43,19 @@ namespace BankAccountProject
                 else if (secondChoice == 2)
                 {
                     Console.WriteLine(savings1.AccountBalance);
+                }
+            }
+            else if (userChoice == 3)
+            {
+                Console.WriteLine("For which account would you like to make a deposit too?");
+                Console.WriteLine("1. Checking \n2. Saving");
+                int thirdChoice = int.Parse(Console.ReadLine());
+                if (thirdChoice == 1)
+                {
+                    Console.WriteLine("How much would you like to deposit into your Checking Account?");
+                    double deposit = Convert.ToDouble(Console.ReadLine());
+                    checking1.Deposit(deposit);
+                    Console.WriteLine("Current Balance: $" + checking1.AccountBalance);
                 }
             }
 
