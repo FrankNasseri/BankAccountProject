@@ -14,7 +14,7 @@ namespace BankAccountProject
         public double AccountBalance
         {
             get { return this.balance; }
-            set { this.AccountBalance = value; }
+            set { this.balance = value; }
         }
 
         public Checking()

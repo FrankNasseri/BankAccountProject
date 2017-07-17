@@ -13,11 +13,6 @@ namespace BankAccountProject
             MattMurdock client1 = new MattMurdock();
             Checking checking1 = new Checking();
             Saving savings1 = new Saving();
-            ////MattMurdock client1 = new MattMurdock("Matthew \"Matt\" Murdock", 27, "516 W 47th Street \nHells Kitchen, New York, 10036");
-            ////Console.WriteLine(client1.Name);
-            ////Console.WriteLine(client1.Address);
-            ////Console.WriteLine(client1.AccountNumber);
-
 
             //Greeting from the cleints bank
             Console.WriteLine("Welcome to the bank of Hell's Kitchen!");
@@ -56,6 +51,33 @@ namespace BankAccountProject
                     double deposit = Convert.ToDouble(Console.ReadLine());
                     checking1.Deposit(deposit);
                     Console.WriteLine("Current Balance: $" + checking1.AccountBalance);
+                }
+                else if (thirdChoice == 2)
+                {
+                    Console.WriteLine("How much would you like to deposit into your Savings Account?");
+                    double deposit = Convert.ToDouble(Console.ReadLine());
+                    savings1.Deposit(deposit);
+                    Console.WriteLine("Current Balance: $" + savings1.AccountBalance);
+                }
+            }
+            else if (userChoice == 4)
+            {
+                Console.WriteLine("For which account would you like to make withdraw from?");
+                Console.WriteLine("1. Checking \n2. Saving");
+                int thirdChoice = int.Parse(Console.ReadLine());
+                if (thirdChoice == 1)
+                {
+                    Console.WriteLine("How much would you like to withdraw from your Checking Account?");
+                    double withdraw = Convert.ToDouble(Console.ReadLine());
+                    checking1.Withdraw(withdraw);
+                    Console.WriteLine("Current Balance: $" + checking1.AccountBalance);
+                }
+                else if (thirdChoice == 2)
+                {
+                    Console.WriteLine("How much would you like to withdraw from your Savings Account?");
+                    double withdraw = Convert.ToDouble(Console.ReadLine());
+                    savings1.Withdraw(withdraw);
+                    Console.WriteLine("Current Balance: $" + savings1.AccountBalance);
                 }
             }
 

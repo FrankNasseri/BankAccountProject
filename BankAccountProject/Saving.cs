@@ -8,11 +8,19 @@ namespace BankAccountProject
 {
     class Saving : Account
     {
-        private double balance = 10000d;
+        private double balance = 0d;
+        private string accountNumber;
+
         public double AccountBalance
         {
             get { return balance; }
-            set { this.AccountBalance = value; }
+            set { this.balance = value; }
+        }
+
+        public Saving()
+        {
+            this.accountNumber = "325";
+            this.balance = 100;
         }
 
         public override double Deposit(double deposit)

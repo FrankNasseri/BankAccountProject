@@ -10,7 +10,7 @@ namespace BankAccountProject
     {
         //3 fields for Matt Murdock
         private string name;
-        private int accountNumber;  //eventually change to phone number
+        private int phoneNumber;  //eventually change to phone number
         private string address;
 
         //3 properties for Matt Murdock
@@ -19,9 +19,9 @@ namespace BankAccountProject
         {
             get { return this.name; }
         }
-        public int AccountNumber
+        public int PhoneNumber
         {
-            get { return this.accountNumber; }
+            get { return this.phoneNumber; }
         }
         public string Address
         {
@@ -34,20 +34,20 @@ namespace BankAccountProject
         {
 
         }
-        public MattMurdock(string name, int accountNumber, string address)
+        public MattMurdock(string name, int phoneNumber, string address)
         {
             this.name = name;
-            this.accountNumber = accountNumber;
+            this.phoneNumber = phoneNumber;
             this.address = address;
         }
         //client method
         public void ClientInfo()
         {
-            this.name = "Matthew \"Mike\" Murdock";
-            this.accountNumber = 127;
+            this.name =  "Matthew \"Mike\" Murdock";
+            this.phoneNumber = 2126780905;
             this.address = "516 W 47th Street \nHells Kitchen, New York, 10036";
             Console.WriteLine(this.name);
-            Console.WriteLine(this.accountNumber);
+            Console.WriteLine(this.phoneNumber);
             Console.WriteLine(this.address);
 
         }
