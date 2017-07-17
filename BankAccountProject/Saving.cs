@@ -17,10 +17,19 @@ namespace BankAccountProject
             set { this.balance = value; }
         }
 
+        public string AccountNumber
+        {
+            get { return this.accountNumber; }
+        }
+
         public Saving()
         {
             this.accountNumber = "325";
-            this.balance = 100;
+            this.balance = 400;
+        }
+        public void CheckBalance()
+        {
+            Console.WriteLine(" The Savings Account: {0}, has a balance of ${1}", accountNumber, balance);
         }
 
         public override double Deposit(double deposit)
