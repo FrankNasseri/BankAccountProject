@@ -25,7 +25,7 @@ namespace BankAccountProject
         public Checking()
         {
             this.accountNumber = "324";
-            this.balance = 1200;
+            this.balance = 4800;
         }
 
         public void CheckBalance()
