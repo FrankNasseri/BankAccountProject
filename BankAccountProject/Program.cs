@@ -31,7 +31,7 @@ namespace BankAccountProject
                     client1.ClientInfo();
                     Console.WriteLine("Press enter when finished");
                     Console.ReadLine();
-                    //Console.Clear();
+                    Console.Clear();
                 }
                 if (userChoice == "2")
                 {
@@ -43,10 +43,16 @@ namespace BankAccountProject
                         if (secondChoice == "1")
                         {
                             checking1.CheckBalance();
+                            Console.WriteLine("Press enter when finished");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
                         if (secondChoice == "2")
                         {
                             savings1.CheckBalance();
+                            Console.WriteLine("Press enter when finished");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
                         if (secondChoice == "3")
                         {
@@ -75,7 +81,7 @@ namespace BankAccountProject
                             Console.WriteLine("Current Balance: $" + checking1.AccountBalance);
                             Console.WriteLine("Press enter when finished");
                             Console.ReadLine();
-                            //Console.Clear();
+                            Console.Clear();
                         }
                         if (thirdChoice == "2")
                         {
@@ -85,7 +91,7 @@ namespace BankAccountProject
                             Console.WriteLine("Current Balance: $" + savings1.AccountBalance);
                             Console.WriteLine("Press enter when finished");
                             Console.ReadLine();
-                            //Console.Clear();
+                            Console.Clear();
                         }
                         if (thirdChoice == "3")
                         {
@@ -102,10 +108,12 @@ namespace BankAccountProject
                 {
                     do
                     {
+
                         Console.WriteLine("For which account would you like to make withdraw from?");
                         Console.WriteLine("1. Checking \n2. Saving\n3. Back \n4. Exit");
                         fourthChoice = Console.ReadLine();
                         Console.Clear();
+
                         if (fourthChoice == "1")
                         {
                             Console.WriteLine("How much would you like to withdraw from your Checking Account?");
@@ -114,40 +122,46 @@ namespace BankAccountProject
                             Console.WriteLine("Current Balance: $" + checking1.AccountBalance);
                             Console.WriteLine("Press enter when finished");
                             Console.ReadLine();
-                            //Console.Clear();
+                            Console.Clear();
+
                         }
+
                         if (fourthChoice == "2")
                         {
                             Console.WriteLine("How much would you like to withdraw from your Savings Account?");
                             double withdraw = Convert.ToDouble(Console.ReadLine());
+
                             if (withdraw > savings1.AccountBalance)
                             {
                                 Console.WriteLine("I'm sorry, but you do not have sufficient funds for that transaction!");
                                 Console.WriteLine("Press enter when finished");
                                 Console.ReadLine();
-                                //Console.Clear();
+                                Console.Clear();
                                 break;
                             }
-                            if (withdraw <= savings1.AccountBalance)
-                            {
-                                savings1.Withdraw(withdraw);
-                                Console.WriteLine("Current Balance: $" + savings1.AccountBalance);
-                                Console.WriteLine("Press enter when finished");
-                                Console.ReadLine();
-                                //Console.Clear();
-                            }
-                            if (fourthChoice == "3")
-                            {
-                                break;
-                            }
-                            if (fourthChoice == "4")
-                            {
-                                userChoice = "5";
-                                break;
-                            }
+
+                            savings1.Withdraw(withdraw);
+                            Console.WriteLine("Current Balance: $" + savings1.AccountBalance);
+                            Console.WriteLine("Press enter when finished");
+                            Console.ReadLine();
+                            Console.Clear();
                         }
+
+
+                        if (fourthChoice == "3")
+                        {
+                            break;
+                        }
+                        if (fourthChoice == "4")
+                        {
+                            userChoice = "5";
+                            break;
+                        }
+
+
                     } while (fourthChoice != "1" || fourthChoice != "2" || fourthChoice != "3" || fourthChoice != "4");
                 }
+
             } while (userChoice != "5");
 
             Console.WriteLine("We appreciate your business here at The Bank of Hell's Kitchen");

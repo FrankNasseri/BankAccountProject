@@ -11,6 +11,7 @@ namespace BankAccountProject
         private double balance = 0d;
         private string accountNumber;
 
+        //Properties for checking class
         public double AccountBalance
         {
             get { return this.balance; }
@@ -22,12 +23,14 @@ namespace BankAccountProject
             get { return this.accountNumber; }
         }
 
+        //Constructor for checking class
         public Checking()
         {
             this.accountNumber = "324";
             this.balance = 4800;
         }
 
+        //Methods for checking class
         public void CheckBalance()
         {
             Console.WriteLine(" The Checking Account: {0}, has a balance of ${1}", accountNumber, balance);
