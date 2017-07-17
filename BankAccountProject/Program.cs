@@ -22,35 +22,43 @@ namespace BankAccountProject
                 Console.WriteLine("1.View Client Information \n2.View Account Balance \n3.Deposit Funds \n4.Withdraw Funds \n5.Exit");
                 int userChoice = int.Parse(Console.ReadLine());
                 Console.Clear();
-                Console.WriteLine("1. Client Information\n2. Exit");
                 if (userChoice == 1)
                 {
-                    client1.ClientInfo();
+                    while (true)
+                    {
+                        Console.WriteLine("1. Client Information\n6. Exit");
+                        int firstChoice = int.Parse(Console.ReadLine());
+                        if (firstChoice == 1)
+                        {
+                            client1.ClientInfo();
+                        }
+                        else if (firstChoice == 6)
+                        {
+                            return;
+                        }
+                    }
                 }
                 else if (userChoice == 2)
                 {
-                    break;
-                }
-
-                while (true)
-                {
-                    Console.WriteLine("1. Checking \n2. Saving \n3. Exit");
-                    int secondChoice = int.Parse(Console.ReadLine());
-                    Console.Clear();
-                    if (secondChoice == 1)
+                    while (true)
                     {
-                        checking1.CheckBalance();
-                    }
-                    else if (secondChoice == 2)
-                    {
-                        savings1.CheckBalance();
-                    }
-                    else if (secondChoice == 3)
-                    {
-                        break;
+                        Console.WriteLine("1. Checking \n2. Saving \n3. Exit");
+                        int secondChoice = int.Parse(Console.ReadLine());
+                        Console.Clear();
+                        if (secondChoice == 1)
+                        {
+                            checking1.CheckBalance();
+                        }
+                        else if (secondChoice == 2)
+                        {
+                            savings1.CheckBalance();
+                        }
+                        else if (secondChoice == 3)
+                        {
+                            break;
+                        }
                     }
                 }
-            
                 else if (userChoice == 3)
                 {
                     while (true)
@@ -117,8 +125,8 @@ namespace BankAccountProject
                     Console.WriteLine("We appreciate your business here at The Bank of Hell's Kitchen");
                     Console.WriteLine("Have a great day and watch out for that DareDevil guy!");
                 }
-                return;
+                    return;
+                }
             }
         }
     }
-}
