@@ -21,31 +21,36 @@ namespace BankAccountProject
                 Console.WriteLine("How may I assist you today?");
                 Console.WriteLine("1.View Client Information \n2.View Account Balance \n3.Deposit Funds \n4.Withdraw Funds \n5.Exit");
                 int userChoice = int.Parse(Console.ReadLine());
+                Console.Clear();
+                Console.WriteLine("1. Client Information\n2. Exit");
                 if (userChoice == 1)
                 {
                     client1.ClientInfo();
                 }
                 else if (userChoice == 2)
                 {
-                    while (true)
+                    break;
+                }
+
+                while (true)
+                {
+                    Console.WriteLine("1. Checking \n2. Saving \n3. Exit");
+                    int secondChoice = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                    if (secondChoice == 1)
                     {
-                        Console.WriteLine("1. Checking \n2. Saving \n3. Exit");
-                        int secondChoice = int.Parse(Console.ReadLine());
-                        Console.Clear();
-                        if (secondChoice == 1)
-                        {
-                            checking1.CheckBalance();
-                        }
-                        else if (secondChoice == 2)
-                        {
-                            savings1.CheckBalance();
-                        }
-                        else if (secondChoice == 3)
-                        {
-                            break;
-                        }
+                        checking1.CheckBalance();
+                    }
+                    else if (secondChoice == 2)
+                    {
+                        savings1.CheckBalance();
+                    }
+                    else if (secondChoice == 3)
+                    {
+                        break;
                     }
                 }
+            
                 else if (userChoice == 3)
                 {
                     while (true)
